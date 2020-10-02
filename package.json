@@ -18,15 +18,15 @@
     "formik": "^2.1.5",
     "lodash": "^4.17.20",
     "moment": "^2.29.0",
-    "mui-drop-file": "https://github.com/Aniganesh/mui-drop-file",
-    "mui-rating-component": "file:../mui-rating-component",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-dropzone": "^11.2.0",
-    "react-forms": "https://github.com/Aniganesh/ml-react-forms",
+    "react-forms": "git+https://github.com/aniganesh/react-forms.git",
     "react-highlight-words": "^0.16.0",
     "react-places-autocomplete": "^7.3.0",
     "react-scripts": "3.4.3",
+    "rf-dropzone-file-picker": "git+https://github.com/aniganesh/rf-dropzone-file-picker.git",
+    "rf-ratings": "git+https://github.com/Aniganesh/rf-ratings.git",
     "typescript": "~3.7.2"
   },
   "scripts": {

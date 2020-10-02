@@ -2,26 +2,21 @@ import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
 // import _ from 'lodash'
-import { FormConfig, IFormActionProps, ReactForm, attachField } from 'react-forms'
-import { MUIRating } from 'mui-rating-component'
-import { TFile } from 'react-forms/dist/lib/ml-form-builder/lib/MUIFileInput';
+import { attachField, FormConfig, IFormActionProps, TFile, ReactForm } from 'react-forms'
+// import { MUIRating } from './MUIRating'
 import { IconButton } from '@material-ui/core';
 import { Add } from '@material-ui/icons';
-import { MUIDropFile } from 'mui-drop-file'
+import 'rf-dropzone-file-picker'
+import 'rf-ratings'
 
-// attachField('dropFile', <MUIDropFile />)
 const handleChange = (files: TFile[], remFiles?: TFile[]) => {
   console.log("Fn passed to onDone", files.concat(remFiles ? remFiles : []))
 }
 const onDrop = (files: any) => {
   console.log(files)
 }
-const onChange = (files: FileList) => {
-  console.log(files)
-}
-// @ts-ignore
-attachField('rating', <MUIRating />)
-// attachField('dropFile', <MUIDropFile />)
+
+// attachField("rating", <MUIRating />)
 const CONFIG: Array<Array<FormConfig> | FormConfig> = [
   {
     type: 'text',
@@ -40,7 +35,13 @@ const CONFIG: Array<Array<FormConfig> | FormConfig> = [
     fieldProps: {
       multiple: true,
       onDone: handleChange,
-      WrapWith: (input: JSX.Element) => <IconButton><Add />{input}</IconButton>,
+      wrapWith: (input: JSX.Element) => <IconButton><Add />{input}</IconButton>,
+    }
+  },
+  {
+    type: 'rating',
+    valueKey: 'rating',
+    fieldProps: {
     }
   }
 ]
@@ -51,7 +52,6 @@ function App() {
 
   const actionConfig: IFormActionProps = {
     submitButtonText: 'Submit',
-    // submitButtonLayout: 'fullWidth',
     submitButtonProps: {
       size: 'large'
     },
